@@ -1,35 +1,29 @@
-<p id="notice"><%= notice %></p>
+<div class="row">
+  <% @listings.each do |listing| %>
+    <div class="col-md-3">
 
-<h1>Listings</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Image</th>
-      <th>Name</th>
-      <th>Category</th>
-      <th>Country</th>
-      <th>Price</th>
-      <th colspan="3"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @listings.each do |listing| %>
-      <tr>
-        <td><%= image_tag listing.image.url(:medium) %></td>
-        <td><%= listing.name %></td>
-        <td><%= listing.category %></td>
-        <td><%= listing.country %></td>
-        <td><%= listing.price %></td>
-        <td><%= link_to 'Show', listing %></td>
-        <td><%= link_to 'Edit', edit_listing_path(listing) %></td>
-        <td><%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %></td>
-      </tr>
-    <% end %>
-  </tbody>
-</table>
-
-<br>
+      <div class="card">
+        <div class="view overlay hm-white-slight">
+          <%= image_tag listing.image.url, width: '100%' %>
+        </div>
+        <div class="card-body">
+          <h4 class="card-title"><%= listing.name %></h4>
+          <p class="card-text">
+            <%= listing.category %> <br>
+            <%= listing.description %> <br>
+            <%= listing.country %> <br>
+            <%= number_to_currency listing.price %> <br>
+            <%= link_to 'Show', listing %> <br>
+            <%= link_to 'Edit', edit_listing_path(listing) %> <br>
+            <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
+          </p>
+        </div>
+      </div>
+    </div>
+  <% end %>
+</div>
 
 <%= link_to 'New Listing', new_listing_path %>
+
+
+

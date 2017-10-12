@@ -1,27 +1,47 @@
 <p id="notice"><%= notice %></p>
 
 
-<%= image_tag @listing.image.url(:medium) %>
 
-<p>
-  <strong>Name:</strong>
-  <%= @listing.name %>
-</p>
 
-<p>
-  <strong>Category:</strong>
-  <%= @listing.category %>
-</p>
 
-<p>
-  <strong>Country:</strong>
-  <%= @listing.country %>
-</p>
+<div class="row">
+  <div class="col-md-6">
+    <%= image_tag @listing.image.url, width: '100%', class: 'z-depth-1' %>
+  </div>
 
-<p>
-  <strong>Price:</strong>
-  <%= @listing.price %>
-</p>
+  <div class="col-md-6">
+    <p>
+      <strong>Name:</strong>
+      <%= @listing.name %>
+    </p>
+
+    <p>
+      <strong>Category:</strong>
+      <%= @listing.category %>
+    </p>
+
+    <p>
+      <strong>Description:</strong>
+      <%= @listing.description %>
+    </p>
+
+    <p>
+      <strong>Country:</strong>
+      <%= @listing.country %>
+    </p>
+
+    <p>
+      <strong>Price:</strong>
+      <%= number_to_currency @listing.price %>
+    </p>
+  </div>
+
+
+</div>
+
+
+
+
 
 
 <%= link_to 'Edit', edit_listing_path(@listing) %> |
