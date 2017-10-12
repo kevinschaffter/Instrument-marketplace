@@ -4,15 +4,18 @@
     <title>Marketplace</title>
     <%= csrf_meta_tags %>
 
-    <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track': 'reload' %>
-    <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
+    <%= stylesheet_link_tag    'application', 'mdb', media: 'all', 'data-turbolinks-track': 'reload' %>
+    <%= javascript_include_tag 'application', 'mdb.min', 'data-turbolinks-track': 'reload' %>
   </head>
 
   <body>
 
     <%= render "shared/application_nav" %>
 
-    <%= yield %>
+
+    <div class="container padding">
+      <%= yield %>
+    </div>
 
     <%= render "shared/application_footer" %>
 

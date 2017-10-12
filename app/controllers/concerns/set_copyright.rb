@@ -6,7 +6,7 @@ module SetCopyright
   end
 
   def set_copyright
-    @copyright = Renderer.copyright 'Instrument Bay', 'All rights reserved'
+    @copyright = Renderer.copyright 'Marketplace', 'All rights reserved'
   end
 
   
