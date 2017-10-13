@@ -1,30 +1,9 @@
 <div class="row">
-  <% @listings.each do |listing| %>
-    <div class="col-md-3">
 
-      <div class="card">
-        <div class="view overlay hm-white-slight">
-          <%= link_to listing do %>
-            <%= image_tag listing.image.url, width: '100%' %>
-          <% end %>
-        </div>
-        <div class="card-body">
-          <h4 class="card-title"><%= listing.name %></h4>
-          <p class="card-text">
-            <%= listing.category %> <br>
-            <%= listing.description %> <br>
-            <%= listing.country %> <br>
-            <%= number_to_currency listing.price %> <br>
-            <% if (user_signed_in?) && (current_user == listing.user) %>
-              <%= link_to 'Edit', edit_listing_path(listing) %> <br>
-              <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
-            <% end %>
-          </p>
-        </div>
-      </div>
-    </div>
-  <% end %>
+  <%= render partial: 'listing', collection: @listings %> 
+
 </div>
+
 
 <% if user_signed_in? %>
   <%= link_to 'New Listing', new_listing_path %>
