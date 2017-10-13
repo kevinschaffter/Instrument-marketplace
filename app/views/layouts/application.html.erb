@@ -6,15 +6,19 @@
 
     <%= stylesheet_link_tag    'application', 'mdb', media: 'all', 'data-turbolinks-track': 'reload' %>
     <%= javascript_include_tag 'application', 'mdb.min', 'data-turbolinks-track': 'reload' %>
+
   </head>
 
   <body>
 
     <%= render "shared/application_nav" %>
 
-
     <div class="container padding">
+
+      <%= render "shared/messages" %>
+      
       <%= yield %>
+
     </div>
 
     <%= render "shared/application_footer" %>

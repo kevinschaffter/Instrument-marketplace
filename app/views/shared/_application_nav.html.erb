@@ -12,8 +12,24 @@
         <%= link_to 'Listings', listings_path, class: 'nav-link nav-item' %>
       </div>
       <form class="form-inline my-2 my-lg-0">
-        <input class="form-control mr-sm-2" type="text" placeholder="Search">
-        <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+
+        <% if user_signed_in? %>
+            <%= link_to "Log out", destroy_user_session_path, method: :delete %>
+            <div class="nav-item dropdown">
+              <a class="nav-link dropdown-toggle" href="http://example.com" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true"
+                      aria-expanded="false">
+                  My Profile
+              </a>
+              <div class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                <%= link_to "Edit Account", edit_user_registration_path, class: 'dropdown-item' %>
+                <a class="dropdown-item" href="#">Another action</a>
+                <a class="dropdown-item" href="#">Something else here</a>
+              </div>
+            </div>
+
+        <% else %>
+          <button class="btn btn-outline-success" type="button"><%= link_to "Sign Up", new_user_registration_path %> </button>
+        <% end %>
       </form>
     </div>
   </div>
