@@ -12,11 +12,7 @@
           <%= listing.category %> <br>
           <%= listing.description %> <br>
           <%= listing.country %> <br>
-          <%= number_to_currency listing.price %> <br>
-          <% if (user_signed_in?) && (current_user == listing.user) %>
-            <%= link_to 'Edit', edit_listing_path(listing) %> <br>
-            <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
-          <% end %>
+          <%= number_to_currency listing.price %>
         </p>
       </div>
     </div>

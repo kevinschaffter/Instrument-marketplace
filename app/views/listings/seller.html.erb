@@ -1,0 +1,12 @@
+<div class="row">
+
+  <%= render partial: 'listing', collection: @listings %> 
+
+</div>
+
+
+<% if user_signed_in? %>
+  <%= link_to 'New Listing', new_listing_path %>
+<% end %>
+
+
