@@ -33,3 +33,27 @@
 .btn {
   cursor: pointer;
 }
+
+
+
+/* Seller Page */
+
+table {
+    border-collapse: separate;
+    border-spacing: 10px 50px;
+}
+
+table th {
+  font-weight: 600 !important;
+  font-size: 14px !important;
+  text-align: center;
+}
+
+table td {
+  text-align: center;
+}
+
+.table-fixed {
+    table-layout: fixed; 
+    overflow: hidden;
+}
