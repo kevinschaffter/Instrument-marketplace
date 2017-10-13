@@ -4,7 +4,9 @@
 
       <div class="card">
         <div class="view overlay hm-white-slight">
-          <%= image_tag listing.image.url, width: '100%' %>
+          <%= link_to listing do %>
+            <%= image_tag listing.image.url, width: '100%' %>
+          <% end %>
         </div>
         <div class="card-body">
           <h4 class="card-title"><%= listing.name %></h4>
@@ -13,9 +15,10 @@
             <%= listing.description %> <br>
             <%= listing.country %> <br>
             <%= number_to_currency listing.price %> <br>
-            <%= link_to 'Show', listing %> <br>
-            <%= link_to 'Edit', edit_listing_path(listing) %> <br>
-            <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% if (user_signed_in?) && (current_user == listing.user) %>
+              <%= link_to 'Edit', edit_listing_path(listing) %> <br>
+              <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
+            <% end %>
           </p>
         </div>
       </div>
@@ -23,7 +26,9 @@
   <% end %>
 </div>
 
-<%= link_to 'New Listing', new_listing_path %>
+<% if user_signed_in? %>
+  <%= link_to 'New Listing', new_listing_path %>
+<% end %>
 
 
 

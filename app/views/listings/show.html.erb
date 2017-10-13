@@ -42,7 +42,10 @@
 
 
 
+<% if current_user == @listing.user %>
 
+  <%= link_to 'Edit', edit_listing_path(@listing) %> |
 
-<%= link_to 'Edit', edit_listing_path(@listing) %> |
+<% end %>
+
 <%= link_to 'Back', listings_path %>
