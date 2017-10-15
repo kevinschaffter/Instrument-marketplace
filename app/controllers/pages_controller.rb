@@ -3,5 +3,6 @@ class PagesController < ApplicationController
   end
 
   def home
+    @listings = Listing.limit(8)
   end
 end

@@ -1,0 +1,21 @@
+
+<div class="col-xl-3 col-lg-6 col-md-6 ">
+  <%= link_to listing do %>
+  <div class="card listing-card">
+    <div class="view overlay hm-white-slight">
+
+    <%= image_tag listing.image.url, width: '100%', class: 'cursor' %>
+
+    </div>
+    <div class="card-body">
+      <h4 class="card-title"><%= listing.name %></h4>
+      <p class="card-text">
+        <%= listing.category %> <br>
+        <%= listing.description %> <br>
+        <%= listing.country %> <br>
+        <%= number_to_currency listing.price %> <br>
+      </p>
+    </div>
+  </div>
+  <% end %>
+</div>

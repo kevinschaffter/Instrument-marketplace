@@ -9,4 +9,9 @@ class Listing < ApplicationRecord
 
     belongs_to :user
 
+
+  #   scope :most_recent, -> {
+  #   order("created_at DESC").limit(1)
+  # }
+
 end

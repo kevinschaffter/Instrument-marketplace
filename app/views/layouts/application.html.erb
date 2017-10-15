@@ -13,13 +13,9 @@
 
     <%= render "shared/application_nav" %>
 
-    <div class="container padding">
-
-      <%= render "shared/messages" %>
-      
+      <div <% if params[:action] != 'home' %> class="container padding" <% end %> >
+        <%= render "shared/messages" %>
       <%= yield %>
-
-    </div>
 
     <%= render "shared/application_footer" %>
 

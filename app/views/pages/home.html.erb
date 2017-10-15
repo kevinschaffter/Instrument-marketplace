@@ -1,2 +1,18 @@
-<h1>Pages#home</h1>
-<p>Find me in app/views/pages/home.html.erb</p>
+  
+
+
+
+<%= render partial: 'masthead' %>
+
+<div class="latest-listings">
+  <h1>Latest Listings</h1>
+</div>
+
+<div class="container">
+  <div class="row">
+
+    <%= render partial: 'listing', collection: @listings %> 
+
+  </div>
+
+</div>
