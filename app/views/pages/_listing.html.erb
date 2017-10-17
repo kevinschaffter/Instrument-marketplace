@@ -7,13 +7,15 @@
     <%= image_tag listing.image.url, width: '100%', class: 'cursor' %>
 
     </div>
-    <div class="card-body">
+    <div class="card-body text-center no-padding">
+      <div class="text-muted"><%= listing.category %></div>
       <h4 class="card-title"><%= listing.name %></h4>
       <p class="card-text">
-        <%= listing.category %> <br>
         <%= listing.description %> <br>
         <%= listing.country %> <br>
-        <%= number_to_currency listing.price %> <br>
+        <div class="card-footer">
+            <span class="left"><%= number_to_currency listing.price %></span>
+        </div>
       </p>
     </div>
   </div>

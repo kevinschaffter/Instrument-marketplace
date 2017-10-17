@@ -1,26 +1,27 @@
+<%= render partial: 'listing_header' %>
+<%= render partial: 'contact_modal' %>
+
+
+
 <div class="row">
   <div class="col-md-6">
-    <%= image_tag @listing.image.url, width: '100%', class: 'z-depth-1' %>
+    <%= image_tag @listing.image.url, width: '100%', class: 'z-depth-2' %>
   </div>
 
+
   <div class="col-md-6">
-    <p>
-      <strong>Name:</strong>
-      <%= @listing.name %>
-    </p>
 
-    <p>
-      <strong>Category:</strong>
-      <%= @listing.category %>
-    </p>
+    <h1><%= @listing.name %></h1>
 
+    <h4 class="text-muted"><%= @listing.category %></h4>
+    <hr>
     <p>
       <strong>Description:</strong>
       <%= @listing.description %>
     </p>
 
     <p>
-      <strong>Country:</strong>
+      <strong>Location:</strong>
       <%= @listing.country %>
     </p>
 
@@ -28,18 +29,17 @@
       <strong>Price:</strong>
       <%= number_to_currency @listing.price %>
     </p>
+
+
+    <% if current_user == @listing.user %>
+
+      <p><%= link_to 'Edit', edit_listing_path(@listing) %> </p>
+
+    <% end %>
+
+    <%= link_to "Contact Seller", root_path, class: 'btn btn-primary', 'data-toggle': 'modal', 'data-target': '#modalContactForm' %>
+
   </div>
-
-
 </div>
 
 
-
-
-<% if current_user == @listing.user %>
-
-  <%= link_to 'Edit', edit_listing_path(@listing) %> |
-
-<% end %>
-
-<%= link_to 'Back', listings_path %>

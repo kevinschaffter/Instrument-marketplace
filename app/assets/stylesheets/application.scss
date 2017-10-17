@@ -13,6 +13,19 @@
     }
   }
 
+.side {
+  display: inline-block;
+}
+
+.cursor {
+  cursor: pointer;
+}
+
+
+.container {
+  margin-bottom: 100px;
+}
+
 
 
 /* Homepage */
@@ -37,6 +50,19 @@
   margin-bottom: 80px;
 }
 
+.latest-listings hr {
+  width: 50%;
+}
+
+.jumbo-container .select-wrapper {
+  margin: auto;
+  color: white;
+}
+
+.sell-button {
+  margin-top: 20px;
+}
+
 
 /* NAV */
 
@@ -49,7 +75,7 @@
 
 
 .footer {
-  position: absolute;
+  position: fixed;
   bottom: 0;
   width: 100%;
   /* Set the fixed height of the footer here */
@@ -100,6 +126,19 @@ table td {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;
 }
 
-.cursor {
-  cursor: pointer;
+
+/* Listing Show Page */
+
+.select-wrapper {
+  width: 447px;
 }
+
+.listing-back-btn {
+  margin-right: 50px !important;
+}
+
+
+
+
+
+

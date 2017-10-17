@@ -4,5 +4,6 @@ class PagesController < ApplicationController
 
   def home
     @listings = Listing.limit(8)
+    @categories = Listing.select(:category)
   end
 end

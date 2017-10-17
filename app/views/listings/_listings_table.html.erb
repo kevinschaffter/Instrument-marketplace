@@ -1,0 +1,34 @@
+<div class="card">
+  <div class="card-body">
+
+      <table class="table table-responsive table-fixed">
+        <thead>
+          <tr>
+            <th>Image</th>
+            <th>Name</th>
+            <th>Category</th>
+            <th>Price</th>
+            <th>Action</th>
+          </tr>
+        </thead>
+        
+        <tbody>
+          <tr>
+            <td><%= image_tag listing.image.url, width: '100%' %></td>
+            <td><%= listing.name %></td>
+            <td><%= listing.category %></td>
+            <td><%= number_to_currency listing.price %></td>
+            <td>
+              <button class="btn btn-sm btn-primary dropdown-toggle" type="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Edit </button>
+              <div class="dropdown-menu">
+                <%= link_to "View", listing, class: 'dropdown-item' %>
+                <%= link_to "Edit", edit_listing_path(listing), class: 'dropdown-item' %>
+                <div class="dropdown-divider"></div>
+                <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' }, class: 'dropdown-item'  %>
+              </div>
+            </td>
+          </tr>
+        </tbody>
+      </table>
+  </div>
+</div>
