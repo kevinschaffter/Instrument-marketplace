@@ -19,8 +19,10 @@ class ListingsController < ApplicationController
   end
 
   # GET /listings/new
-  def new
+
+  def new 
     @listing = Listing.new
+    @categories = Category.all.map{|c| [ c.category, c.id ] }
   end
 
   # GET /listings/1/edit
@@ -31,6 +33,7 @@ class ListingsController < ApplicationController
   # POST /listings.json
   def create
     @listing = Listing.new(listing_params)
+    @listing.category_id = params[:category_id]
     @listing.user_id = current_user.id
 
     respond_to do |format|
