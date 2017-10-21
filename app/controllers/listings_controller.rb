@@ -13,6 +13,10 @@ class ListingsController < ApplicationController
     @listings = Listing.all.order("created_at DESC")
   end
 
+  def category
+    @listing_category = Listing.where(category_id: params[:category_id])
+  end
+
   # GET /listings/1
   # GET /listings/1.json
   def show
@@ -27,6 +31,7 @@ class ListingsController < ApplicationController
 
   # GET /listings/1/edit
   def edit
+    @categories = Category.all.map{|c| [ c.category, c.id ] }
   end
 
   # POST /listings
@@ -39,10 +44,8 @@ class ListingsController < ApplicationController
     respond_to do |format|
       if @listing.save
         format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
-        format.json { render :show, status: :created, location: @listing }
       else
         format.html { render :new }
-        format.json { render json: @listing.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -50,13 +53,12 @@ class ListingsController < ApplicationController
   # PATCH/PUT /listings/1
   # PATCH/PUT /listings/1.json
   def update
+    @listing.category_id = params[:category_id]
     respond_to do |format|
       if @listing.update(listing_params)
         format.html { redirect_to @listing, notice: 'Listing was successfully updated.' }
-        format.json { render :show, status: :ok, location: @listing }
       else
         format.html { render :edit }
-        format.json { render json: @listing.errors, status: :unprocessable_entity }
       end
     end
   end
@@ -67,7 +69,6 @@ class ListingsController < ApplicationController
     @listing.destroy
     respond_to do |format|
       format.html { redirect_to listings_url, notice: 'Listing was successfully destroyed.' }
-      format.json { head :no_content }
     end
   end
 
