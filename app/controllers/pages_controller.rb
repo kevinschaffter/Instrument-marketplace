@@ -4,6 +4,6 @@ class PagesController < ApplicationController
 
   def home
     @listings = Listing.limit(8)
-    @categories = Listing.select(:category)
+    @categories = Category.all.map{|c| [ c.category, c.id ] }
   end
 end

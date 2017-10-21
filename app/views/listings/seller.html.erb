@@ -1,12 +1,21 @@
 <div class="row">
 
+<% if current_user.listings.present? %>
+
   <%= render partial: 'listing', collection: @listings %> 
+
+
+<% else %>
+  
+    <H4 class="no-listing"> No Listings Found </H4>
+
+<% end %>
 
 </div>
 
 
 <% if user_signed_in? %>
-  <%= link_to 'New Listing', new_listing_path %>
+  <%= link_to 'New Listing', new_listing_path, class: 'btn btn-primary' %>
 <% end %>
 
 

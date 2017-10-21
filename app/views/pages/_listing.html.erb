@@ -8,11 +8,10 @@
 
     </div>
     <div class="card-body text-center no-padding">
-      <div class="text-muted"><%= listing.category %></div>
+      <div class="text-muted"><%= listing.category.category %></div>
       <h4 class="card-title"><%= listing.name %></h4>
       <p class="card-text">
-        <%= listing.description %> <br>
-        <%= listing.country %> <br>
+        <strong>Location:</strong> <%= listing.country %> <br>
         <div class="card-footer">
             <span class="left"><%= number_to_currency listing.price %></span>
         </div>
