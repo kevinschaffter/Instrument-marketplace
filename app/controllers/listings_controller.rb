@@ -10,11 +10,13 @@ class ListingsController < ApplicationController
   end
 
   def index
-    @listings = Listing.all.order("created_at DESC")
-  end
-
-  def category
-    @listing_category = Listing.where(category_id: params[:category_id])
+    @categories = Category.all.map{|c| [ c.category, c.id ] }
+    if params[:category_id]
+      @listings = Listing.where(category_id: params[:category_id]).order("created_at DESC")
+      @search_parameter = Category.find(params[:category_id]).category
+    else
+      @listings = Listing.all.order("created_at DESC")
+    end
   end
 
   # GET /listings/1

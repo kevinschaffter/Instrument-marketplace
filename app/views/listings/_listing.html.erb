@@ -1,31 +1,32 @@
 <% if params[:action] == 'seller' %>
 
-<%= render partial: 'listings_table' %>
+  <%= render partial: 'listings_table' %>
 
 <% else %>
 
-  <div class="col-md-3">
+  <div class="col-xl-3 col-lg-6 col-md-6 ">
     <%= link_to listing do %>
-      <div class="card listing-card">
-        <div class="view overlay hm-white-slight">
+    <div class="card listing-card">
+      <div class="view overlay hm-white-slight">
 
-        <%= image_tag listing.image.url, width: '100%' %>
+      <%= image_tag listing.image.url, width: '100%', class: 'cursor' %>
 
-        </div>
-        <div class="card-body">
-          <h4 class="card-title"><%= listing.name %></h4>
-          <p class="card-text">
-            <%= listing.category %> <br>
-            <%= listing.description %> <br>
-            <%= listing.country %> <br>
-            <hr>
-            <%= number_to_currency listing.price %>
+      </div>
+      <div class="card-body text-center no-padding">
+        <div class="text-muted"><%= listing.category.category %></div>
+        <h4 class="card-title"><%= listing.name %></h4>
+        <p class="card-text">
+        <strong>Location:</strong> <%= listing.country %> <br>
+          <div class="card-footer">
+            <span class="left"><%= number_to_currency listing.price %></span>
             <% if (user_signed_in?) && (current_user == listing.user) && (params[:action] == 'seller') %>
               <%= link_to 'Edit', edit_listing_path(listing) %> | <%= link_to 'Destroy', listing, method: :delete, data: { confirm: 'Are you sure?' } %>
             <% end %>
-          </p>
-        </div>
+          </div>
+        </p>
       </div>
+    </div>
     <% end %>
   </div>
+
 <% end %>
