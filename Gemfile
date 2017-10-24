@@ -34,3 +34,5 @@ gem 'popper_js', '~> 1.12.3'
 gem 'devise'
 gem "font-awesome-rails"
 gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
+
+ruby '2.4.2'
