@@ -33,3 +33,4 @@ gem "paperclip", "~> 5.0.0"
 gem 'popper_js', '~> 1.12.3'
 gem 'devise'
 gem "font-awesome-rails"
+gem 'dotenv-rails', '~> 2.2', '>= 2.2.1'
