@@ -2,6 +2,19 @@
 @import "font-awesome";
 
 
+
+
+/* FONTS */
+
+h1, .h1,
+h2, .h2,
+h3, .h3,
+h4, .h4,
+h5, .h5,
+h6, .h6 {
+  font-family: 'Futura', serif;
+}
+
 /* Site-wide padding */
 
 .padding {
@@ -62,6 +75,11 @@
 
 .sell-button {
   margin-top: 20px;
+}
+
+.sell-button a {
+  color: #fff;
+  text-decoration: underline;
 }
 
 
@@ -141,6 +159,13 @@ table td {
 }
 
 
+/* listing index */
+
+.search {
+  margin-top: 25px;
+  margin-right: 12px;
+}
+
 /* Listing Show Page */
 
 .select-wrapper {
@@ -151,11 +176,11 @@ table td {
   margin-right: 50px !important;
 }
 
-.select-wrapper input.select-dropdown {
+.home-select .select-wrapper input.select-dropdown {
   color:white;
 }
 
-.select-wrapper span.caret {
+.home-select .select-wrapper span.caret {
   color: white !important;
 }
 
@@ -186,8 +211,16 @@ table td {
   margin-top: 22px;
 }
 
+/* FORM */
 
+.form-select  .select-dropdown {
+  color: #212529 !important;
+  font-weight: 300 !important;
+}
 
+.form-select .form-control {
+  border: none;
+}
 
 
 

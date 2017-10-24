@@ -7,10 +7,14 @@
                     <h2 class="card-title pt-3 mb-5 font-bold jumbo-header">The Audition Cafe Marketplace</h2>
                     <p class="px-5 pb-4 jumbo-subtext">Buy or sell musical instruments and accessories. ZERO fees.</p>
                     <!--Blue select-->
-                      <%= form_tag('/category', :method=>:get) do %>
-                       <%= select_tag :category_id, options_for_select(@categories), class: 'mdb-select colorful-select dropdown-primary side', prompt: "Select Instrument" %>
-                       <%= submit_tag 'Search', class: 'btn btn-md btn-primary' %>
-                      <% end %>
+
+
+                     <div class="home-select"> <%= form_tag('/listings', :method=>:get) do %>
+                        <%= select_tag :category_id, options_for_select(@categories), class: ' masthead-select mdb-select colorful-select dropdown-primary side', prompt: "Select Instrument" %>
+                        <%= submit_tag 'Search', class: 'btn btn-md btn-primary' %>
+                       <% end %>
+                         
+                    </div>
 
                     <div>
                       <p class="sell-button"> Looking to sell? <%= link_to "Click here", new_listing_path %></p>

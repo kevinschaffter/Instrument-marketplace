@@ -1,13 +1,38 @@
-<div class="row">
+<% listings = "All" %>
 
-  <%= render partial: 'listing', collection: @listings %> 
+<% if @listings.present? %>
 
-</div>
+  <h1><%= @search_parameter || listings %> Listings</h1>
 
+  <%= form_tag('/listings', :method=>:get) do %>
+   <%= select_tag :category_id, options_for_select(@categories), class: 'mdb-select colorful-select dropdown-primary side', prompt: "Select Instrument" %>
+   <%= submit_tag 'Search', class: 'btn btn-md btn-primary' %>
+  <% end %> 
+
+  <hr>
+
+  <div class="row">
+
+    <%= render partial: 'listing', collection: @listings %> 
+
+<% else %>
+
+    <h1>No Listings for <%= @search_parameter %> </h1>
+
+<% end %>
+
+  </div>
 
 <% if user_signed_in? %>
-  <%= link_to 'New Listing', new_listing_path %>
+
+<div class="fixed-action-btn" style="bottom: 60px; right: 24px;">
+    <a class="btn-floating btn-lg green" href="<%= new_listing_path %>">
+        <%= fa_icon "plus" %>
+    </a>
+</div>
+
 <% end %>
+
 
 
 
