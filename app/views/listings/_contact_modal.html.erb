@@ -1,6 +1,7 @@
 <div class="modal fade" id="modalContactForm" tabindex="-1" role="dialog" aria-labelledby="myModalLabel" aria-hidden="true">
         <div class="modal-dialog cascading-modal" role="document">
             <!--Content-->
+
             <div class="modal-content">
     
                 <!--Header-->
@@ -11,36 +12,36 @@
                     </button>
                 </div>
                 <!--Body-->
-                <div class="modal-body mb-0">
-                    <div class="md-form form-sm">
-                        <i class="fa fa-user prefix"></i>
-                        <input type="text" id="form19" class="form-control">
-                        <label for="form19">Your name</label>
+                <%= form_tag (listing_contact_owner_index_path(@listing)) do %>
+                    <!-- /listings/1/contact_owner -->
+                    <div class="modal-body mb-0">
+                        <div class="md-form form-sm">
+                            <i class="fa fa-user prefix"></i>
+                            <%= text_field_tag :name, nil, class: 'form-control', placeholder: "Your name" %>
+                        </div>
+        
+                        <div class="md-form form-sm">
+                            <i class="fa fa-envelope prefix"></i>
+                            <%= email_field_tag :email, nil, class: 'form-control', placeholder: "Your email" %>
+                            
+                        </div>
+        
+                        <div class="md-form form-sm">
+                            <i class="fa fa-tag prefix"></i>
+                            <%= text_field_tag :subject, nil, class: 'form-control', placeholder: "Subject" %>
+                        </div>
+        
+                        <div class="md-form form-sm">
+                            <i class="fa fa-pencil prefix"></i>
+                            <%= text_area_tag :message, nil, class: 'md-textarea', placeholder: "Your message" %>
+                        </div>
+        
+                        <div class="text-center mt-1-half">
+                            <button class="btn btn-info mb-2">Send <i class="fa fa-send ml-1"></i></button>
+                        </div>
+        
                     </div>
-    
-                    <div class="md-form form-sm">
-                        <i class="fa fa-envelope prefix"></i>
-                        <input type="password" id="form20" class="form-control">
-                        <label for="form20">Your email</label>
-                    </div>
-    
-                    <div class="md-form form-sm">
-                        <i class="fa fa-tag prefix"></i>
-                        <input type="text" id="form21" class="form-control">
-                        <label for="form21">Subject</label>
-                    </div>
-    
-                    <div class="md-form form-sm">
-                        <i class="fa fa-pencil prefix"></i>
-                        <textarea type="text" id="form8" class="md-textarea mb-0"></textarea>
-                        <label for="form8">Your message</label>
-                    </div>
-    
-                    <div class="text-center mt-1-half">
-                        <button class="btn btn-info mb-2">Send <i class="fa fa-send ml-1"></i></button>
-                    </div>
-    
-                </div>
+                <% end %>
             </div>
             <!--/.Content-->
         </div>

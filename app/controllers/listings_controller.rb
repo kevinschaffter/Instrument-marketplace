@@ -45,7 +45,7 @@ class ListingsController < ApplicationController
 
     respond_to do |format|
       if @listing.save
-        UserMailer.listing_confirmation_email(@user).deliver_later
+        UserMailer.listing_confirmation_email(@listing).deliver_later
         format.html { redirect_to @listing, notice: 'Listing was successfully created.' }
       else
         format.html { render :new }
