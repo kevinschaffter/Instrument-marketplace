@@ -1,2 +1,33 @@
-<h1>Pages#contact</h1>
-<p>Find me in app/views/pages/contact.html.erb</p>
+    
+
+<h1>Contact Us</h1>
+
+<hr>
+
+<div class="modal-body mb-0">
+    <div class="md-form form-sm">
+        <i class="fa fa-user prefix"></i>
+        <%= text_field_tag :name, nil, class: 'form-control', placeholder: "Your name" %>
+    </div>
+
+    <div class="md-form form-sm">
+        <i class="fa fa-envelope prefix"></i>
+        <%= email_field_tag :email, nil, class: 'form-control', placeholder: "Your email" %>
+
+    </div>
+
+    <div class="md-form form-sm">
+        <i class="fa fa-tag prefix"></i>
+        <%= text_field_tag :subject, nil, class: 'form-control', placeholder: "Subject" %>
+    </div>
+
+    <div class="md-form form-sm">
+        <i class="fa fa-pencil prefix"></i>
+        <%= text_area_tag :message, nil, class: 'md-textarea', placeholder: "Your message" %>
+    </div>
+
+    <div class="mt-1-half">
+        <button class="btn btn-primary mb-2">Send <i class="fa fa-send ml-1"></i></button>
+    </div>
+
+</div>
