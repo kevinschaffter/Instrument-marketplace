@@ -1,4 +1,4 @@
-
+<% content_for :body_class, 'login-background' %>
 
 <%= form_for(resource, as: resource_name, url: registration_path(resource_name)) do |f| %>
 <%= devise_error_messages! %>
@@ -32,8 +32,16 @@
         </div>
 
         <div class="text-center">
-          <%= f.submit "Sign up", class: "btn btn-default" %>
+          <%= f.submit "Sign up", class: "btn btn-primary" %>
         </div>
+
+
+        <fb:login-button 
+          scope="public_profile,email"
+          onlogin="checkLoginState();"
+          data-auto-logout-link="true">
+        </fb:login-button>
+
         <% end %>
 
         <%= render "devise/shared/links" %>

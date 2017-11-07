@@ -8,12 +8,11 @@
             <p class="px-5 pb-4 jumbo-subtext">Buy or sell musical instruments and accessories. ZERO fees.</p>
             <!--Blue select-->
 
-
             <div class="home-select"> <%= form_tag('/listings', :method=>:get) do %>
+              <!-- <label for="category_id">Select Instrument:</label> -->
               <%= select_tag :category_id, options_for_select(@categories), class: 'masthead-select mdb-select colorful-select dropdown-primary side', prompt: "Select Instrument" %>
               <%= submit_tag 'Search', class: 'btn btn-md btn-primary' %>
               <% end %>
-
             </div>
 
             <div>

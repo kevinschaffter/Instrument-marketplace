@@ -3,6 +3,7 @@
 
 $background-color: #79859C;
 
+
 /* FONTS */
 
 h1, .h1,
@@ -111,14 +112,16 @@ body, .body {
   padding-right: 0px !important;
 }
 
-.sign-up .btn:hover {
+.sign-up > .btn:hover {
   background: green !important;
   transition: none !important;
 }
 
+.login-background {
+  background: $background-color;
+}
 
 /* FOOTER */
-
 
 .footer {
   position: fixed;
@@ -174,6 +177,10 @@ table td {
 
 .listing-card:hover {
   box-shadow: 0 14px 28px rgba(0,0,0,0.25), 0 10px 10px rgba(0,0,0,0.22) !important;
+}
+
+.margin-top-15 {
+  margin-top: 15px;
 }
 
 
@@ -239,7 +246,6 @@ table td {
 }
 
 
-
 /* FORM */
 
 .form-select  .select-dropdown {
@@ -251,7 +257,13 @@ table td {
   border: none;
 }
 
+.new-listing {
+  margin-bottom: 50px;
+}
 
+#happy > select {
+  display: block !important;
+}
 
 
 

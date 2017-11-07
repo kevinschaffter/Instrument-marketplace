@@ -6,6 +6,9 @@
   <div class="col-md-6">
     <%= image_tag @listing.image.url, width: '100%', class: 'z-depth-2' %>
 
+    <br/>
+    <br/>
+
     <%= link_to "Back", listings_path, class: 'btn btn-md btn-indigo side listing-back-btn' %>
   </div>
 
@@ -24,6 +27,11 @@
     <p>
       <strong>Location:</strong>
       <%= @listing.country %>
+    </p>
+
+    <p>
+      <strong>Condition:</strong>
+      <%= @listing.condition %>
     </p>
 
     <p>
