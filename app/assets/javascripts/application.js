@@ -15,3 +15,12 @@
 //= require rails-ujs
 //= require_tree .
 
+$(function(){
+  setTimeout(function(){ 
+  $('.close').trigger('click')
+}, 2500);
+})
+
+$(document).ready(function(){
+$('#happy>select').addClass('mdb-select colorful-select dropdown-primary form-control')
+})

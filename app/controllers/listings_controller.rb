@@ -11,7 +11,7 @@ class ListingsController < ApplicationController
 
   def index
     @categories = Category.all.map{|c| [ c.category, c.id ] }
-    if params[:category_id]
+    if !params[:category_id].blank?
       @listings = Listing.where(category_id: params[:category_id]).order("created_at DESC")
       @search_parameter = Category.find(params[:category_id]).category
     else

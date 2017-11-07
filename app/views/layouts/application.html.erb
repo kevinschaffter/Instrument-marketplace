@@ -12,11 +12,11 @@
 
 </head>
 
-<body>
+<body class="<%= content_for :body_class %>">
 
   <%= render "shared/application_nav" %>
 
-  <div <% if params[:action] != 'home' %> class="container padding" <% end %> >
+  <div <% if controller.action_name != 'home' %> class="container padding" <% end %> >
     <%= render "shared/messages" %>
     <%= yield %>
 

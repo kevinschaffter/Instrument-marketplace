@@ -31,6 +31,7 @@
             </div>
 
         <% else %>
+          <%= link_to "Login", new_user_session_path, class: 'nav-link nav-item' %>
           <div class="sign-up">
             <button class="btn btn-outline-success" type="button"><%= link_to "Sign Up", new_user_registration_path %> </button>
           </div>

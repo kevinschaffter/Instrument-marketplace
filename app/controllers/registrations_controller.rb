@@ -4,7 +4,7 @@ class RegistrationsController < Devise::RegistrationsController
   end
 
   def create
-    # add custom create logic here
+    super
   end
 
   def update
